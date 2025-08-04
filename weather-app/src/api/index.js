@@ -6,3 +6,9 @@ export const getWeatherData = async (city) => {
     const res = await fetch(`${baseUrl}?key=${apiKey}&q=${city}&aqi=yes`);
     return await res.json();
 };
+
+export const getCurrentLocation = async (lat , lon) => {
+    const res = await fetch(`${baseUrl}?key=${apiKey}&q=${lat},${lon}&aqi=yes`);
+    return await res.json();
+};
+

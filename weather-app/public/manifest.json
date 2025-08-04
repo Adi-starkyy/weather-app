@@ -1,8 +1,11 @@
 {
-    "manifest_version" : 3,
-    "name" : "weather app",
-    "version" : "1.0.0",
-    "action" : {
-        "default_popup" : "index.html"
+    "manifest_version": 3,
+    "name": "weather app",
+    "version": "1.0.0",
+    "permissions": [
+      "geolocation"
+    ],
+    "action": {
+        "default_popup": "index.html"
     }
 }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import React from 'react'
 import Card from './components/card'
 import Button from './components/button'
@@ -6,6 +7,11 @@ import Input from './components/input'
 import { useWeather } from '../context/Weather'
 
 const App = () => {
+
+  useEffect(() => {
+    weather.fetchCurrentLocationData();
+  },[]);
+
   const weather = useWeather();
 
   const searchButton = () => {
