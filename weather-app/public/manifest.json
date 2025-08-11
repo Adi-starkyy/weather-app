@@ -1,16 +1,18 @@
 {
     "manifest_version": 3,
-    "name": "weather app",
+    "name": "Local Weather App",
     "version": "1.0.0",
     "permissions": [
       "geolocation"
     ],
+    "description": "Get real-time weather updates based on your current location, right from your browser toolbar.",
     "action": {
         "default_popup": "index.html",
         "default_icon": {
-          "16": "icon.svg",
-          "32": "icon.svg",
-          "64": "icon.svg"
+          "32": "icon2.png",
+          "16": "icon2.png",
+          "64": "icon2.png",
+          "128": "icon2.png"
         }
     }
 }
