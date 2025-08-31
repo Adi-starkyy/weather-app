@@ -12,8 +12,10 @@ const Card = () => {
 
   console.log(condition);
 
+  const hasData = weather?.data?.current;
+
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-4 flex flex-col items-center gap-2">
+    <div className={`bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-4 flex flex-col items-center gap-2 transition-all duration-300 ease-in-out ${hasData ? 'opacity-100 transform scale-100' : 'opacity-70 transform scale-95'}`}>
       {icon && (
         <img 
           src={`https:${icon}`} 
@@ -26,7 +28,7 @@ const Card = () => {
           {temperature !== undefined ? `${temperature}°C` : '--'}
         </h2>
         <h5 className="text-sm font-medium text-gray-600 mt-1">
-          {location || 'Unknown'}, {country || 'Unknown'}
+          {location || 'Enter a city name'}, {country || ''}
         </h5>
         {condition && (
           <p className="text-sm text-amber-500 mt-1 font-medium">{condition}</p>

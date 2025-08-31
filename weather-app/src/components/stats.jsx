@@ -15,9 +15,11 @@ const Stats = () => {
     return 'text-gray-400'
   }
 
+  const hasData = weather?.data?.current;
+
   return (
-    <div className="grid grid-cols-2 gap-4 w-full">
-      <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 text-center">
+    <div className={`grid grid-cols-2 gap-4 w-full transition-all duration-300 ease-in-out ${hasData ? 'opacity-100 h-auto' : 'opacity-0 h-0 overflow-hidden'}`}>
+      <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 text-center transform transition-all duration-300 hover:shadow-md">
         <div className="flex items-center justify-center gap-2 text-amber-600 mb-1">
           <Wind size={16} />
           <span className="text-xs font-medium">Wind Speed</span>
@@ -27,7 +29,7 @@ const Stats = () => {
         </div>
       </div>
 
-      <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 text-center">
+      <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 text-center transform transition-all duration-300 hover:shadow-md">
         <div className="flex items-center justify-center gap-2 text-amber-600 mb-1">
           <Waves size={16} />
           <span className="text-xs font-medium">Air Quality</span>

@@ -26,7 +26,7 @@ const App = () => {
   console.log(weather);
 
   return (
-    <div className="h-140 w-100 bg-gradient-to-br from-amber-100 via-orange-50 to-yellow-50 p-4 rounded-lg shadow-lg">
+    <div className="min-h-[300px] w-100 bg-gradient-to-br from-amber-100 via-orange-50 to-yellow-50 p-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
       <div className="flex flex-col gap-4">
         {/* Header */}
         <h1 className="text-2xl font-bold text-amber-700 text-center mb-2">
