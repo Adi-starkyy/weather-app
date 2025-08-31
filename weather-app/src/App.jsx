@@ -5,7 +5,7 @@ import Button from './components/button'
 import Input from './components/input'
 import Stats from "./components/stats"
 
-import { Search } from 'lucide-react'
+import { Search, Github, Linkedin } from 'lucide-react'
 
 import { useWeather } from '../context/Weather'
 
@@ -26,23 +26,52 @@ const App = () => {
   console.log(weather);
 
   return (
-    <div className="app h-140 w-100 bg-gradient-to-br from-amber-200 to-yellow-100 shadow-lg p-6 flex flex-col items-center justify-between space-y-4">
-      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-500 text-center">🌤 Weather App</h1>
-      <div className="w-full flex flex-col items-center space-y-3">
-        <Input className="w-4/5 px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-400" />
-        <div className="flex flex-col items-center ">
-          <div className='flex flex-row btn btn-neutral btn-outline px-4' onClick={ searchButton }>
-            <Button 
-            value = "Search"
-            />
-            <Search />
-          </div>
-          <Stats />
+    <div className="h-140 w-100 bg-gradient-to-br from-amber-100 via-orange-50 to-yellow-50 p-4 rounded-lg shadow-lg">
+      <div className="flex flex-col gap-4">
+        {/* Header */}
+        <h1 className="text-2xl font-bold text-amber-700 text-center mb-2">
+          <span className="mr-2">🌤</span>
+          Weather Now
+        </h1>
+
+        {/* Search Section */}
+        <div className="flex gap-2 items-center justify-center">
+          <Input />
+          <button 
+            onClick={weather.fetchData}
+            className="btn btn-circle btn-sm btn-primary bg-amber-500 hover:bg-amber-600 border-none"
+          >
+            <Search size={18} />
+          </button>
+        </div>
+
+        {/* Weather Card */}
+        <Card />
+
+        {/* Stats */}
+        <Stats />
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-3 mt-2">
+          <a
+            href="https://github.com/Adi-starkyy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-white/80 hover:bg-white hover:shadow-md transition-all duration-300 text-amber-600 hover:text-amber-700"
+          >
+            <Github size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/adrijobhowmik05/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-white/80 hover:bg-white hover:shadow-md transition-all duration-300 text-amber-600 hover:text-amber-700"
+          >
+            <Linkedin size={20} />
+          </a>
         </div>
       </div>
-
-      <Card className="w-full bg-white rounded-xl shadow-inner p-4" />
-   </div>
+    </div>
   )
 }
 

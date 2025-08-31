@@ -13,19 +13,25 @@ const Card = () => {
   console.log(condition);
 
   return (
-    <div className="w-full max-h-50 bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center space-y-1 overflow-hidden">
+    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-4 flex flex-col items-center gap-2">
       {icon && (
         <img 
           src={`https:${icon}`} 
           alt="weather icon" 
-          className="w-16 h-16 object-contain drop-shadow-sm"
+          className="w-16 h-16 drop-shadow-sm hover:scale-110 transition-transform"
         />
       )}
-      <h2 className="text-3xl font-bold text-gray-800 tracking-wide">
-        {temperature !== undefined ? `${temperature}°C` : '--'}
-      </h2>
-      <h5 className="text-md font-medium text-gray-500">{location || 'Unknown'}, {country || 'Unknown'}</h5>
-      {condition ? ( <p className="text-sm text-amber-600 italic">{condition}</p> ) : (<p>"No valid"</p>) }
+      <div className="text-center">
+        <h2 className="text-4xl font-bold text-amber-600">
+          {temperature !== undefined ? `${temperature}°C` : '--'}
+        </h2>
+        <h5 className="text-sm font-medium text-gray-600 mt-1">
+          {location || 'Unknown'}, {country || 'Unknown'}
+        </h5>
+        {condition && (
+          <p className="text-sm text-amber-500 mt-1 font-medium">{condition}</p>
+        )}
+      </div>
     </div>
   )
 }
